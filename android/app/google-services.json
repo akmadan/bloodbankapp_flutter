@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1076891939969",
+    "project_id": "blooddrop-98c49",
+    "storage_bucket": "blooddrop-98c49.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1076891939969:android:592a7ba7a394e9178f4980",
+        "android_client_info": {
+          "package_name": "com.company.blooddrop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1076891939969-um8jrpej7q0h8vgh4b9gqiivf4f2oam2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7KIKcAK5uALlHndcnDKxrIMQ0K7FqM8U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1076891939969-um8jrpej7q0h8vgh4b9gqiivf4f2oam2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
