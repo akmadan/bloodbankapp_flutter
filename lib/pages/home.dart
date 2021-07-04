@@ -1,3 +1,4 @@
+import 'package:blooddrop/components/drawer.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -11,6 +12,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: DrawerWidget(uid: '',),
       appBar: AppBar(),
     );
   }
