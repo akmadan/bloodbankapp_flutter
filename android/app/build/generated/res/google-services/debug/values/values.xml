@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">1076891939969-um8jrpej7q0h8vgh4b9gqiivf4f2oam2.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">1076891939969</string>
+    <string name="google_api_key" translatable="false">AIzaSyB7KIKcAK5uALlHndcnDKxrIMQ0K7FqM8U</string>
+    <string name="google_app_id" translatable="false">1:1076891939969:android:592a7ba7a394e9178f4980</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyB7KIKcAK5uALlHndcnDKxrIMQ0K7FqM8U</string>
+    <string name="google_storage_bucket" translatable="false">blooddrop-98c49.appspot.com</string>
+    <string name="project_id" translatable="false">blooddrop-98c49</string>
+</resources>

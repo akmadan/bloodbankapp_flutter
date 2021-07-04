@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 
+import 'otp.dart';
+
 class Welcome extends StatefulWidget {
   const Welcome({Key? key}) : super(key: key);
 
@@ -18,12 +20,13 @@ class _WelcomeState extends State<Welcome> {
   final _formkey = GlobalKey<FormState>();
   var phone = '';
   void trysubmit() async {
+    
     final isValid = _formkey.currentState!.validate();
     FocusScope.of(context).unfocus();
     if (isValid) {
       _formkey.currentState!.save();
-      // Navigator.push(
-      //     context, MaterialPageRoute(builder: (context) => OTPScreen(phone)));
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => OTPScreen(phone)));
     }
   }
 
