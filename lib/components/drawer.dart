@@ -34,23 +34,6 @@ class DrawerWidget extends StatelessWidget {
                   ),
                 ),
                 ListTile(
-                  leading: Icon(Icons.person),
-                  title: ModifiedText(
-                    color: AppColors.black,
-                    weight: FontWeight.normal,
-                    text: 'My Profile',
-                    size: 17,
-                  ),
-                  onTap: () {
-                    // Navigator.push(
-                    //     context,
-                    //     MaterialPageRoute(
-                    //         builder: (context) => MyRequests(
-                    //               uid: uid,
-                    //             )));
-                  },
-                ),
-                ListTile(
                   leading: Icon(Icons.share),
                   title: ModifiedText(
                     color: AppColors.black,
