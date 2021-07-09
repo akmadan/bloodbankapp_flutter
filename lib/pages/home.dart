@@ -1,4 +1,6 @@
 import 'package:blooddrop/components/drawer.dart';
+import 'package:blooddrop/utils/colors.dart';
+import 'package:blooddrop/utils/text.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -34,7 +36,13 @@ class _HomeState extends State<Home> {
       drawer: DrawerWidget(
         uid: useruid,
       ),
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: ModifiedText(
+            text: 'BloodDrop',
+            color: AppColors.white,
+            size: 18,
+            weight: FontWeight.bold),
+      ),
       body: All(
         useruid: useruid,
       ),

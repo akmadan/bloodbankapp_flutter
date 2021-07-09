@@ -24,10 +24,10 @@ class DrawerWidget extends StatelessWidget {
                 DrawerHeader(
                   child: Container(
                     padding: EdgeInsets.all(20),
-                    // child: Image.asset(
-                    //   'assets/logo.png',
-                    //   fit: BoxFit.contain,
-                    // ),
+                    child: Image.asset(
+                      'assets/logo.png',
+                      fit: BoxFit.contain,
+                    ),
                   ),
                   decoration: BoxDecoration(
                     color: Theme.of(context).primaryColor,

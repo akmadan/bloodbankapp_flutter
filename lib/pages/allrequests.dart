@@ -77,15 +77,29 @@ class _AllState extends State<All> {
                       snapshot.data!.docs.map((DocumentSnapshot document) {
                     Map<String, dynamic> data =
                         document.data() as Map<String, dynamic>;
-
-                    return RequestBubble(
-                      name: data['hospitalname'],
-                      address: data['hospitaladdress'],
-                      contact: data['contact'],
-                      bg: data['bg'],
-                      lat: data['latitude'],
-                      lon: data['longitude'],
-                    );
+                    if (bloodgroup == 'All Requests') {
+                      return RequestBubble(
+                        name: data['hospitalname'],
+                        address: data['hospitaladdress'],
+                        contact: data['contact'],
+                        bg: data['bg'],
+                        lat: data['latitude'],
+                        lon: data['longitude'],
+                      );
+                    } else {
+                      if (data['bg'] == bloodgroup) {
+                        return RequestBubble(
+                          name: data['hospitalname'],
+                          address: data['hospitaladdress'],
+                          contact: data['contact'],
+                          bg: data['bg'],
+                          lat: data['latitude'],
+                          lon: data['longitude'],
+                        );
+                      } else {
+                        return Container();
+                      }
+                    }
                   }).toList(),
                 );
               }
