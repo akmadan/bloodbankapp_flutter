@@ -21,18 +21,37 @@ class DrawerWidget extends StatelessWidget {
             child: ListView(
               padding: EdgeInsets.zero,
               children: <Widget>[
-                DrawerHeader(
-                  child: Container(
-                    padding: EdgeInsets.all(20),
-                    child: Image.asset(
-                      'assets/logo.png',
-                      fit: BoxFit.contain,
-                    ),
-                  ),
-                  decoration: BoxDecoration(
-                    color: Theme.of(context).primaryColor,
+                Container(
+                  padding: EdgeInsets.all(10),
+                  child: Column(
+                    children: [
+                      SizedBox(height: 30),
+                      Container(
+                        height: 80,
+                        width: 80,
+                        child: Image.asset(
+                          'assets/logo.png',
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                      ModifiedText(
+                          weight: FontWeight.bold,
+                          text: 'BloodDrop',
+                          color: AppColors.darkgrey,
+                          size: 12),
+                      SizedBox(height: 5),
+                      ModifiedText(
+                          weight: FontWeight.bold,
+                          text: 'Every Drop Counts',
+                          color: AppColors.darkgrey,
+                          size: 10),
+                    ],
                   ),
                 ),
+                // decoration: BoxDecoration(
+                //   color: Colors.grey.shade100,
+                // ),
+
                 ListTile(
                   leading: Icon(Icons.share),
                   title: ModifiedText(

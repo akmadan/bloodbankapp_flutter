@@ -50,16 +50,16 @@ class _SplashScreenState extends State<SplashScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
-                      height: 100,
-                      width: 100,
+                      height: 120,
+                      width: 120,
                       padding: EdgeInsets.all(10),
-                      child: Image.asset('assets/logo.png'),
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        image: DecorationImage(
+                            image: AssetImage('assets/logo.png'),
+                            fit: BoxFit.cover),
                         borderRadius: BorderRadius.circular(25.0),
                       ),
                     ),
-                    SizedBox(height: 15),
                     ModifiedText(
                         weight: FontWeight.bold,
                         text: 'BloodDrop',
@@ -68,7 +68,7 @@ class _SplashScreenState extends State<SplashScreen> {
                     SizedBox(height: 5),
                     ModifiedText(
                         weight: FontWeight.bold,
-                        text: 'Search for Blood, in Blood Banks Near You',
+                        text: 'Every Drop Counts',
                         color: AppColors.darkgrey,
                         size: 15),
                   ],

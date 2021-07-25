@@ -1,7 +1,9 @@
+import 'package:blooddrop/pages/bloodbank.dart';
 import 'package:blooddrop/utils/colors.dart';
 import 'package:blooddrop/utils/text.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class RequestBubble extends StatefulWidget {
   final String name, address, contact, bg;
@@ -43,9 +45,15 @@ class _RequestBubbleState extends State<RequestBubble> {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        // if (widget.ismine == false) {
-        //   showAlertDialog(context);
-        // }
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => BloodBank(
+                      name: widget.name,
+                      address: widget.address,
+                      bg: widget.bg,
+                      contact: widget.contact,
+                    )));
       },
       child: Container(
           margin: EdgeInsets.only(left: 10, right: 10, top: 5, bottom: 5),
@@ -79,11 +87,14 @@ class _RequestBubbleState extends State<RequestBubble> {
                             SizedBox(
                               height: 8,
                             ),
-                            ModifiedText(
-                                text: widget.contact,
-                                color: Colors.black,
-                                size: 16,
-                                weight: FontWeight.w600),
+                            InkWell(
+                              onTap: () => launch("tel://" + widget.contact),
+                              child: ModifiedText(
+                                  text: widget.contact,
+                                  color: Colors.blue,
+                                  size: 16,
+                                  weight: FontWeight.w600),
+                            ),
                             SizedBox(
                               height: 8,
                             ),
