@@ -6,9 +6,10 @@ import 'package:geolocator/geolocator.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class RequestBubble extends StatefulWidget {
-  final String name, address, contact, bg;
+  final String name, address, contact, bg, bloodbankid;
   final double lat, lon;
   static String distance = '';
+  final bool move;
   const RequestBubble(
       {Key? key,
       required this.name,
@@ -16,7 +17,9 @@ class RequestBubble extends StatefulWidget {
       required this.contact,
       required this.bg,
       required this.lat,
-      required this.lon})
+      required this.lon,
+      required this.bloodbankid,
+      required this.move})
       : super(key: key);
 
   @override
@@ -45,15 +48,18 @@ class _RequestBubbleState extends State<RequestBubble> {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => BloodBank(
-                      name: widget.name,
-                      address: widget.address,
-                      bg: widget.bg,
-                      contact: widget.contact,
-                    )));
+        widget.move
+            ? Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => BloodBank(
+                          bloodbankid: widget.bloodbankid,
+                          name: widget.name,
+                          address: widget.address,
+                          bg: widget.bg,
+                          contact: widget.contact,
+                        )))
+            : () {};
       },
       child: Container(
           margin: EdgeInsets.only(left: 10, right: 10, top: 5, bottom: 5),
@@ -83,7 +89,7 @@ class _RequestBubbleState extends State<RequestBubble> {
                                 text: widget.address,
                                 color: Colors.black,
                                 size: 16,
-                                weight: FontWeight.w600),
+                                weight: FontWeight.normal),
                             SizedBox(
                               height: 8,
                             ),
@@ -91,9 +97,9 @@ class _RequestBubbleState extends State<RequestBubble> {
                               onTap: () => launch("tel://" + widget.contact),
                               child: ModifiedText(
                                   text: widget.contact,
-                                  color: Colors.blue,
+                                  color: AppColors.primary,
                                   size: 16,
-                                  weight: FontWeight.w600),
+                                  weight: FontWeight.normal),
                             ),
                             SizedBox(
                               height: 8,

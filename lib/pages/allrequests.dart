@@ -79,6 +79,8 @@ class _AllState extends State<All> {
                         document.data() as Map<String, dynamic>;
                     if (bloodgroup == 'All Requests') {
                       return RequestBubble(
+                        move: true,
+                        bloodbankid: data['uid'],
                         name: data['hospitalname'],
                         address: data['hospitaladdress'],
                         contact: data['contact'],
@@ -89,6 +91,8 @@ class _AllState extends State<All> {
                     } else {
                       if (data['bg'] == bloodgroup) {
                         return RequestBubble(
+                          move: true,
+                          bloodbankid: data['uid'],
                           name: data['hospitalname'],
                           address: data['hospitaladdress'],
                           contact: data['contact'],
